@@ -16,6 +16,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use Cake\Event\EventInterface;
 
 /**
  * Application Controller
@@ -28,8 +29,8 @@ use Cake\Event\Event;
 class AppController extends Controller
 {
 
- 
-	
+
+
 	/**
      * Initialization hook method.
      *
@@ -39,7 +40,8 @@ class AppController extends Controller
      *
      * @return void
      */
-    public function initialize(): void {
+    public function initialize() : void
+    {
         parent::initialize();
 
         $this->loadComponent('RequestHandler', [
@@ -58,18 +60,15 @@ class AppController extends Controller
          */
         //$this->loadComponent('Security');
     }
-    
-    public function beforeFilter(\Cake\Event\EventInterface $event) {
-		
-    	
-    	return parent::beforeFilter($event);
-	}
-	
-	public function beforeRender(\Cake\Event\EventInterface $event) {
+
+
+	public function beforeRender(EventInterface $event) {
 		parent::beforeRender($event);
+        // force JSON data view class all over the place
 		$this->viewBuilder()->setClassName('Json');
+        $this->viewBuilder()->setOption('serialize', true);
 	}
-	
-	
-	
+
+
+
 }

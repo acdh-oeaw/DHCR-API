@@ -19,8 +19,9 @@ use Cake\Datasource\ConnectionManager;
 use Cake\Error\Debugger;
 use Cake\Http\Exception\NotFoundException;
 use Cake\Routing\Router;
+use Cake\View\View;
 
-$this->layout = false;
+View::disableAutoLayout();
 
 ?>
 <!DOCTYPE html>
@@ -71,7 +72,7 @@ $this->layout = false;
             </a>
         </p>
     </div>
-    
+
     <div class="columns large-6">
         <h4>Documentation</h4>
         <p>
@@ -79,14 +80,14 @@ $this->layout = false;
                 API docs on Swagger
             </a>
         </p>
-        
+
         <h4>Error Reports &amp; Feature Requests</h4>
         <p>
             <a href="https://github.com/hashmich/DHCR-API/issues" target="_blank">
                 Issue tracker on GitHub
             </a>
         </p>
-        
+
         <h4>Legal Information</h4>
         <p>
             <a href="https://shared.acdh.oeaw.ac.at/acdh-common-assets/api/imprint.php?serviceID=7435" target="_blank">
@@ -148,7 +149,7 @@ $this->layout = false;
                 <?php echo $this->Html->link(Router::url('institutions/index?sort_count&group', true), '/institutions/index?sort_count&group'); ?>
             </dd>
         </dl>
-    
+
     </div>
     <hr />
 </div>

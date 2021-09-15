@@ -25,6 +25,9 @@ use Cake\View\View;
 class AppView extends View
 {
 
+
+    public $layout = 'default';
+
     /**
      * Initialization hook method.
      *
@@ -34,7 +37,7 @@ class AppView extends View
      *
      * @return void
      */
-    public function initialize()
+    public function initialize() : void
     {
     }
 }

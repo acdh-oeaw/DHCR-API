@@ -39,7 +39,7 @@ class ErrorController extends AppController
     /**
      * beforeFilter callback.
      *
-     * @param \Cake\Event\Event $event Event.
+     * @param \Cake\Event\EventInterface $event Event.
      * @return \Cake\Http\Response|null|void
      */
     public function beforeFilter(\Cake\Event\EventInterface $event)
@@ -49,7 +49,7 @@ class ErrorController extends AppController
     /**
      * beforeRender callback.
      *
-     * @param \Cake\Event\Event $event Event.
+     * @param \Cake\Event\EventInterface $event Event.
      * @return \Cake\Http\Response|null|void
      */
     public function beforeRender(\Cake\Event\EventInterface $event)
@@ -57,7 +57,7 @@ class ErrorController extends AppController
         parent::beforeRender($event);
 
         $this->viewBuilder()->setTemplatePath('Error');
-        
+
         if(!Configure::read('debug')) {
 			// override _serialize key as we don't want the error message to reveal application code structure (file, line)
         	$message = $url = $code = null;
@@ -68,7 +68,7 @@ class ErrorController extends AppController
     /**
      * afterFilter callback.
      *
-     * @param \Cake\Event\Event $event Event.
+     * @param \Cake\Event\EventInterface $event Event.
      * @return \Cake\Http\Response|null|void
      */
     public function afterFilter(\Cake\Event\EventInterface $event)

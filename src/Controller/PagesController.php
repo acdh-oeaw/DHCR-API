@@ -16,6 +16,7 @@ namespace App\Controller;
 
 use Cake\Core\Configure;
 use Cake\Event\Event;
+use Cake\Event\EventInterface;
 use Cake\Http\Exception\ForbiddenException;
 use Cake\Http\Exception\NotFoundException;
 use Cake\View\Exception\MissingTemplateException;
@@ -29,18 +30,20 @@ use Cake\View\Exception\MissingTemplateException;
  */
 class PagesController extends AppController
 {
-	
-	
-	public function beforeRender(\Cake\Event\EventInterface $event) {
-		// bypass forcing data views for this controller only, make no call to parent::beforeRender()
+
+
+	public function beforeRender(EventInterface $event) {
+		parent::beforeRender($event);
+        // bypass forcing data views for this controller only (view class 'Json' defined in Application.php)
+        $this->viewBuilder()->setClassName('App');
 	}
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
 	/**
      * Displays a view
      *
