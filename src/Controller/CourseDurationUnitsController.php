@@ -21,9 +21,7 @@ class CourseDurationUnitsController extends AppController
 	 */
 	public function index() {
 		$duration_units = $this->CourseDurationUnits->getCourseDurationUnits();
-
 		$this->set('duration_units', $duration_units);
-		$this->set('_serialize', 'duration_units');
 	}
 
 
@@ -39,8 +37,6 @@ class CourseDurationUnitsController extends AppController
 	 */
 	public function view($id = null) {
 		$duration_unit = $this->CourseDurationUnits->getCourseDurationUnit($id);
-
 		$this->set('duration_unit', $duration_unit);
-		$this->set('_serialize', 'duration_unit');
 	}
 }

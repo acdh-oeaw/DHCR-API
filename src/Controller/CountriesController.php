@@ -21,11 +21,8 @@ class CountriesController extends AppController
      */
     public function index() {
 		$this->Countries->evaluateQuery($this->request->getQuery());
-
     	$countries = $this->Countries->getCountries();
-
 		$this->set('countries', $countries);
-		$this->set('_serialize', 'countries');
 	}
 
 
@@ -38,9 +35,7 @@ class CountriesController extends AppController
      */
     public function view($id = null) {
         $country = $this->Countries->getCountry($id);
-
         $this->set('country', $country);
-        $this->set('_serialize', 'country');
     }
 
 

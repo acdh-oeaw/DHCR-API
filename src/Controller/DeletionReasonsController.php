@@ -21,9 +21,7 @@ class DeletionReasonsController extends AppController
 	 */
 	public function index() {
 		$deletion_reasons = $this->DeletionReasons->getDeletionReasons();
-
 		$this->set('deletion_reasons', $deletion_reasons);
-		$this->set('_serialize', 'deletion_reasons');
 	}
 
 
@@ -39,8 +37,6 @@ class DeletionReasonsController extends AppController
 	 */
 	public function view($id = null) {
 		$deletion_reasons = $this->DeletionReasons->getDeletionReason($id);
-
 		$this->set('deletion_reasons', $deletion_reasons);
-		$this->set('_serialize', 'deletion_reasons');
 	}
 }

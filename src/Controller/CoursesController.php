@@ -27,16 +27,12 @@ class CoursesController extends AppController
 		$courses = $this->Courses->getResults();
 
 		$this->set('courses', $courses);
-        $this->set('_serialize', 'courses');
     }
 
 
     public function count() {
 		$this->Courses->evaluateQuery($this->request->getQuery());
-		$result = ['course_count' => $this->Courses->countResults()];
-
-		$this->set('count', $result);
-		$this->set('_serialize', 'count');
+		$this->set('course_count', $this->Courses->countResults());
 	}
 
     /**
@@ -53,13 +49,10 @@ class CoursesController extends AppController
 				'Courses.active' => true
 			]
 		]);
-
         if(empty($course)) {
 			throw new RecordNotFoundException();
 		}
-
         $this->set('course', $course);
-		$this->set('_serialize', 'course');
     }
 
 

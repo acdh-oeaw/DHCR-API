@@ -55,14 +55,8 @@ class ErrorController extends AppController
     public function beforeRender(\Cake\Event\EventInterface $event)
     {
         parent::beforeRender($event);
-
         $this->viewBuilder()->setTemplatePath('Error');
 
-        if(!Configure::read('debug')) {
-			// override _serialize key as we don't want the error message to reveal application code structure (file, line)
-        	$message = $url = $code = null;
-			$this->set('_serialize', ['message','url','code']);
-		}
     }
 
     /**

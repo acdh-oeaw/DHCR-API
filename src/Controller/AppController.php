@@ -65,7 +65,7 @@ class AppController extends Controller
 	public function beforeRender(EventInterface $event) {
 		parent::beforeRender($event);
         // force JSON data view class all over the place
-		$this->viewBuilder()->setClassName('Json');
+        $this->viewBuilder()->setClassName('Json');
         $this->viewBuilder()->setOption('serialize', true);
 	}
 

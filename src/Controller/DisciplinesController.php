@@ -21,11 +21,8 @@ class DisciplinesController extends AppController
      */
     public function index() {
         $this->Disciplines->evaluateQuery($this->request->getQuery());
-
         $disciplines = $this->Disciplines->getDisciplines();
-
         $this->set('disciplines', $disciplines);
-        $this->set('_serialize', 'disciplines');
     }
 
 
@@ -38,8 +35,6 @@ class DisciplinesController extends AppController
      */
     public function view($id = null) {
         $discipline = $this->Disciplines->getDiscipline($id);
-
         $this->set('discipline', $discipline);
-        $this->set('_serialize', 'discipline');
     }
 }

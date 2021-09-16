@@ -21,11 +21,8 @@ class CourseTypesController extends AppController
      */
     public function index() {
         $this->CourseTypes->evaluateQuery($this->request->getQuery());
-
         $course_types = $this->CourseTypes->getCourseTypes();
-
         $this->set('course_types', $course_types);
-        $this->set('_serialize', 'course_types');
     }
 
 
@@ -38,8 +35,6 @@ class CourseTypesController extends AppController
      */
     public function view($id = null) {
         $course_type = $this->CourseTypes->getCourseType($id);
-
         $this->set('course_type', $course_type);
-        $this->set('_serialize', 'course_type');
     }
 }

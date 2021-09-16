@@ -22,11 +22,8 @@ class CourseParentTypesController extends AppController
      */
     public function index() {
         $this->CourseParentTypes->evaluateQuery($this->request->getQuery());
-
         $course_parent_types = $this->CourseParentTypes->getCourseParentTypes();
-
         $this->set('course_parent_types', $course_parent_types);
-        $this->set('_serialize', 'course_parent_types');
     }
 
 
@@ -39,8 +36,6 @@ class CourseParentTypesController extends AppController
      */
     public function view($id = null) {
         $course_parent_type = $this->CourseParentTypes->getCourseParentType($id);
-
         $this->set('course_parent_type', $course_parent_type);
-        $this->set('_serialize', 'course_parent_type');
     }
 }

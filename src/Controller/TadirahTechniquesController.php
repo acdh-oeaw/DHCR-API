@@ -21,11 +21,8 @@ class TadirahTechniquesController extends AppController
      */
     public function index() {
         $this->TadirahTechniques->evaluateQuery($this->request->getQuery());
-
         $tadirah_techniques = $this->TadirahTechniques->getTadirahTechniques();
-
         $this->set('tadirah_techniques', $tadirah_techniques);
-        $this->set('_serialize', 'tadirah_techniques');
     }
 
 
@@ -38,8 +35,6 @@ class TadirahTechniquesController extends AppController
      */
     public function view($id = null) {
         $tadirah_technique = $this->TadirahTechniques->getTadirahTechnique($id);
-
         $this->set('tadirah_technique', $tadirah_technique);
-        $this->set('_serialize', 'tadirah_technique');
     }
 }

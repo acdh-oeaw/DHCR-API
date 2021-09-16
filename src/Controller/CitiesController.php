@@ -21,11 +21,8 @@ class CitiesController extends AppController
      */
     public function index() {
 		$this->Cities->evaluateQuery($this->request->getQuery());
-
 		$cities = $this->Cities->getCities();
-
 		$this->set('cities', $cities);
-		$this->set('_serialize', 'cities');
     }
 
     /**
@@ -37,9 +34,7 @@ class CitiesController extends AppController
      */
     public function view($id = null) {
         $city = $this->Cities->getCity($id);
-
         $this->set('city', $city);
-		$this->set('_serialize', 'city');
     }
 
 

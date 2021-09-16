@@ -21,11 +21,8 @@ class TadirahObjectsController extends AppController
      */
     public function index() {
         $this->TadirahObjects->evaluateQuery($this->request->getQuery());
-
         $tadirah_objects = $this->TadirahObjects->getTadirahObjects();
-
         $this->set('tadirah_objects', $tadirah_objects);
-        $this->set('_serialize', 'tadirah_objects');
     }
 
 
@@ -38,8 +35,6 @@ class TadirahObjectsController extends AppController
      */
     public function view($id = null) {
         $tadirah_object = $this->TadirahObjects->getTadirahObject($id);
-
         $this->set('tadirah_object', $tadirah_object);
-        $this->set('_serialize', 'tadirah_object');
     }
 }
