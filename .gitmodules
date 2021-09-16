@@ -1,4 +1,4 @@
 [submodule "plugins/DhcrCore"]
 	path = plugins/DhcrCore
 	url = ../DHCR-Core.git
-    branch = 4.0.4migration
+    branch = master
