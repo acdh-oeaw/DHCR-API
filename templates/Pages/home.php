@@ -116,7 +116,7 @@ View::disableAutoLayout();
             </dd>
             <dt>Use of filter parameters</dt>
             <dd>
-                For a commplete parameter reference, please check the <a href="https://app.swaggerhub.com/apis-docs/hashmich/DHCR-API/1.0" target="_blank">
+                For a complete parameter reference, please check the <a href="https://app.swaggerhub.com/apis-docs/hashmich/DHCR-API/1.0" target="_blank">
                     API docs
                 </a>.<br />
                 <?php echo $this->Html->link(Router::url('/courses/index?country_id=3', true), '/courses/index?country_id=3'); ?>
