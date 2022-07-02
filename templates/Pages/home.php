@@ -71,8 +71,8 @@ View::disableAutoLayout();
             </p>
             <h4>Support</h4>
             <p>
-                <a href="mailto:hendrik@clarin.eu?subject=[DHCR-API] Support" target="_blank">
-                    hendrik@clarin.eu
+                <a href="mailto:patrick@clarin.eu?subject=[DHCR-API] Support" target="_blank">
+                    patrick@clarin.eu
                 </a>
             </p>
         </div>
