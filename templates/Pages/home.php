@@ -118,12 +118,12 @@ View::disableAutoLayout();
                 <dd>
                     <?php echo $this->Html->link(Router::url('/courses/index?recent', true), '/courses/index?recent'); ?>
                 </dd>
-                <dt>Use of filter parameters</dt>
+                <dt>Use of filter parameters</dt><br />
                 <dd>
                     <?php echo $this->Html->link(Router::url('/courses/index?country_id=3', true), '/courses/index?country_id=3'); ?>
                     For a complete parameter reference, please check the <a href="https://app.swaggerhub.com/apis-docs/hashmich/DHCR-API/1.0" target="_blank">
                         API docs
-                    </a>.<br />
+                    </a>.
                 </dd>
                 <dt>Count results</dt>
                 <dd>
