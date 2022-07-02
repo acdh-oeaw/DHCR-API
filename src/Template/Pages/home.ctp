@@ -119,10 +119,9 @@ $this->layout = false;
                 </dd>
                 <dt>Use of filter parameters</dt>
                 <dd>
-                    <?php echo $this->Html->link(Router::url('/courses/index?country_id=3', true), '/courses/index?country_id=3'); ?>
-                    For a complete parameter reference, please check the <a href="https://app.swaggerhub.com/apis-docs/hashmich/DHCR-API/1.0" target="_blank">
-                        API docs<br />
-                    </a>.
+                    <?php echo $this->Html->link(Router::url('/courses/index?country_id=3', true), '/courses/index?country_id=3'); ?><br />
+                    For a complete parameter reference, please check the
+                    <a href="https://app.swaggerhub.com/apis-docs/hashmich/DHCR-API/1.0" target="_blank">API docs</a>.
                 </dd>
                 <dt>Count results</dt>
                 <dd>
