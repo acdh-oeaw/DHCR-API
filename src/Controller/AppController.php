@@ -46,10 +46,10 @@ class AppController extends Controller
             'enableBeforeRedirect' => false,
         ]);
         $this->response = $this->response->withHeader('Access-Control-Allow-Origin', '*');
-    
+
         // Set the Cache-Control as public for 3600 seconds
         $this->response = $this->response->withSharable(true, 3600);
-        
+
         //$this->loadComponent('Flash');
 
         /*
