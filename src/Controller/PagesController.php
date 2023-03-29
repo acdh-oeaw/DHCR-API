@@ -17,7 +17,7 @@
 namespace App\Controller;
 
 use Cake\Core\Configure;
-use Cake\Event\Event;
+use Cake\Event\EventInterface;
 use Cake\Http\Exception\ForbiddenException;
 use Cake\Http\Exception\NotFoundException;
 use Cake\View\Exception\MissingTemplateException;
@@ -27,11 +27,11 @@ use Cake\View\Exception\MissingTemplateException;
  *
  * This controller will render views from Template/Pages/
  *
- * @link https://book.cakephp.org/3.0/en/controllers/pages-controller.html
+ * @link https://book.cakephp.org/4/en/controllers/pages-controller.html
  */
 class PagesController extends AppController
 {
-    public function beforeRender(Event $event)
+    public function beforeRender(EventInterface $event)
     {
         // bypass forcing data views for this controller only, make no call to parent::beforeRender()
     }
