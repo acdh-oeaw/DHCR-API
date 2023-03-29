@@ -31,18 +31,10 @@ use Cake\View\Exception\MissingTemplateException;
  */
 class PagesController extends AppController
 {
-
-
     public function beforeRender(Event $event)
     {
         // bypass forcing data views for this controller only, make no call to parent::beforeRender()
     }
-
-
-
-
-
-
 
     /**
      * Displays a view
