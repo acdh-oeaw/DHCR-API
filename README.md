@@ -1,4 +1,4 @@
-# DHCR-API
+# DHCR-API 
 REST-ful API for the Digital Humanities Course Registry
 
 ## API Documentation on SwaggerHub
