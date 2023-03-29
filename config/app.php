@@ -168,8 +168,14 @@ return [
      *   the memory limit by when a fatal error is encountered. This allows
      *   breathing room to complete logging or error handling.
      */
+
+     // ***
+     // PA 29-03-2023 *Temporarly* disabled deprecation warnings. Purpose: check correct working after migration to cakephp 4.0
+     // The warnings are probably caused by PHP 8 and will disappear after migrating to cakephp 4.4. Then this commit should be reverted.
+     // ***
+
     'Error' => [
-        'errorLevel' => E_ALL,
+        'errorLevel' => E_ALL & ~E_USER_DEPRECATED,
         'exceptionRenderer' => 'Cake\Error\ExceptionRenderer',
         'skipLog' => [],
         'log' => true,
