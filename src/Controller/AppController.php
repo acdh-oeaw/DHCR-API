@@ -70,5 +70,6 @@ class AppController extends Controller
     {
         parent::beforeRender($event);
         $this->viewBuilder()->setClassName('Json');
+        $this->viewBuilder()->disableAutoLayout();
     }
 }
