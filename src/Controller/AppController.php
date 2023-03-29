@@ -59,6 +59,8 @@ class AppController extends Controller
          * see https://book.cakephp.org/4/en/controllers/components/form-protection.html
          */
         //$this->loadComponent('FormProtection');
+
+        $this->viewBuilder()->disableAutoLayout();
     }
 
     public function beforeFilter(EventInterface $event)
@@ -69,7 +71,6 @@ class AppController extends Controller
     public function beforeRender(EventInterface $event)
     {
         parent::beforeRender($event);
-        $this->viewBuilder()->setClassName('Json');
-        $this->viewBuilder()->disableAutoLayout();
+        $this->viewBuilder()->setClassName('Json');      
     }
 }
