@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -12,23 +13,20 @@ use App\Controller\AppController;
  */
 class CourseDurationUnitsController extends AppController
 {
-    public $modelClass = 'DhcrCore.CourseDurationUnits';
+	public $modelClass = 'DhcrCore.CourseDurationUnits';
 
-    /**
+	/**
 	 * Index method
 	 *
 	 * @return \Cake\Http\Response|void
 	 */
-	public function index() {
+	public function index()
+	{
 		$duration_units = $this->CourseDurationUnits->getCourseDurationUnits();
 
 		$this->set('duration_units', $duration_units);
 		$this->set('_serialize', 'duration_units');
 	}
-
-
-
-
 
 	/**
 	 * View method
@@ -37,7 +35,8 @@ class CourseDurationUnitsController extends AppController
 	 * @return \Cake\Http\Response|void
 	 * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
 	 */
-	public function view($id = null) {
+	public function view($id = null)
+	{
 		$duration_unit = $this->CourseDurationUnits->getCourseDurationUnit($id);
 
 		$this->set('duration_unit', $duration_unit);
