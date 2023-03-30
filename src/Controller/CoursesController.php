@@ -27,7 +27,7 @@ class CoursesController extends AppController
         $courses = $this->Courses->getResults();
 
         $this->set('courses', $courses);
-        $this->set('_serialize', 'courses');
+        $this->viewBuilder()->setOption('serialize', true);
     }
 
     public function count()
@@ -36,7 +36,7 @@ class CoursesController extends AppController
         $result = ['course_count' => $this->Courses->countResults()];
 
         $this->set('count', $result);
-        $this->set('_serialize', 'count');
+        $this->viewBuilder()->setOption('serialize', true);
     }
 
     /**
@@ -60,6 +60,6 @@ class CoursesController extends AppController
         }
 
         $this->set('course', $course);
-        $this->set('_serialize', 'course');
+        $this->viewBuilder()->setOption('serialize', true);
     }
 }
