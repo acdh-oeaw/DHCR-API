@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -12,14 +13,15 @@ use App\Controller\AppController;
  */
 class DeletionReasonsController extends AppController
 {
-    public $modelClass = 'DhcrCore.DeletionReasons';
+	public $modelClass = 'DhcrCore.DeletionReasons';
 
-    /**
+	/**
 	 * Index method
 	 *
 	 * @return \Cake\Http\Response|void
 	 */
-	public function index() {
+	public function index()
+	{
 		$deletion_reasons = $this->DeletionReasons->getDeletionReasons();
 
 		$this->set('deletion_reasons', $deletion_reasons);
@@ -37,7 +39,8 @@ class DeletionReasonsController extends AppController
 	 * @return \Cake\Http\Response|void
 	 * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
 	 */
-	public function view($id = null) {
+	public function view($id = null)
+	{
 		$deletion_reasons = $this->DeletionReasons->getDeletionReason($id);
 
 		$this->set('deletion_reasons', $deletion_reasons);
