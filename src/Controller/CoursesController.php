@@ -4,8 +4,6 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Datasource\Exception\RecordNotFoundException;
-use Cake\Event\Event;
-use http\Exception\BadHeaderException;
 
 /**
  * Courses Controller
