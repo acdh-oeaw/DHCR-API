@@ -90,11 +90,11 @@ $routes->scope('/', function (RouteBuilder $builder) {
 
     $builder->connect(
         '/deletion_reasons/index',
-        ['controller' => 'DeleteReasons', 'action' => 'index'],
+        ['controller' => 'DeletionReasons', 'action' => 'index'],
     );
     $builder->connect(
         '/deletion_reasons/view/{id}',
-        ['controller' => 'DeleteReasons', 'action' => 'view'],
+        ['controller' => 'DeletionReasons', 'action' => 'view'],
     )
         ->setPatterns(['id' => '\d+'])
         ->setPass(['id']);
