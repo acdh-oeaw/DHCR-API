@@ -27,7 +27,7 @@ class TadirahObjectsController extends AppController
         $tadirah_objects = $this->TadirahObjects->getTadirahObjects();
 
         $this->set('tadirah_objects', $tadirah_objects);
-        $this->set('_serialize', 'tadirah_objects');
+        $this->viewBuilder()->setOption('serialize', true);
     }
 
     /**
@@ -42,6 +42,6 @@ class TadirahObjectsController extends AppController
         $tadirah_object = $this->TadirahObjects->getTadirahObject($id);
 
         $this->set('tadirah_object', $tadirah_object);
-        $this->set('_serialize', 'tadirah_object');
+        $this->viewBuilder()->setOption('serialize', true);
     }
 }
