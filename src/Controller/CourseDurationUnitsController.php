@@ -25,7 +25,7 @@ class CourseDurationUnitsController extends AppController
 		$duration_units = $this->CourseDurationUnits->getCourseDurationUnits();
 
 		$this->set('duration_units', $duration_units);
-		$this->set('_serialize', 'duration_units');
+		$this->viewBuilder()->setOption('serialize', true);
 	}
 
 	/**
@@ -40,6 +40,6 @@ class CourseDurationUnitsController extends AppController
 		$duration_unit = $this->CourseDurationUnits->getCourseDurationUnit($id);
 
 		$this->set('duration_unit', $duration_unit);
-		$this->set('_serialize', 'duration_unit');
+		$this->viewBuilder()->setOption('serialize', true);
 	}
 }
