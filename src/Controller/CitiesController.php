@@ -27,7 +27,7 @@ class CitiesController extends AppController
     $cities = $this->Cities->getCities();
 
     $this->set('cities', $cities);
-    $this->set('_serialize', 'cities');
+    $this->viewBuilder()->setOption('serialize', true);
   }
 
   /**
