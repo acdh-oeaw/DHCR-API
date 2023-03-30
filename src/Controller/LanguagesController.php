@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -19,7 +20,8 @@ class LanguagesController extends AppController
      *
      * @return \Cake\Http\Response|void
      */
-    public function index() {
+    public function index()
+    {
         $this->Languages->evaluateQuery($this->request->getQuery());
 
         $languages = $this->Languages->getLanguages();
@@ -28,7 +30,6 @@ class LanguagesController extends AppController
         $this->set('_serialize', 'languages');
     }
 
-
     /**
      * View method
      *
@@ -36,7 +37,8 @@ class LanguagesController extends AppController
      * @return \Cake\Http\Response|void
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function view($id = null) {
+    public function view($id = null)
+    {
         $language = $this->Languages->getLanguage($id);
 
         $this->set('language', $language);
