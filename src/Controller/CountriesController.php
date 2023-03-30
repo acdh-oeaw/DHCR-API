@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -19,15 +20,15 @@ class CountriesController extends AppController
      *
      * @return \Cake\Http\Response|void
      */
-    public function index() {
-		$this->Countries->evaluateQuery($this->request->getQuery());
+    public function index()
+    {
+        $this->Countries->evaluateQuery($this->request->getQuery());
 
-    	$countries = $this->Countries->getCountries();
+        $countries = $this->Countries->getCountries();
 
-		$this->set('countries', $countries);
-		$this->set('_serialize', 'countries');
-	}
-
+        $this->set('countries', $countries);
+        $this->set('_serialize', 'countries');
+    }
 
     /**
      * View method
@@ -36,12 +37,11 @@ class CountriesController extends AppController
      * @return \Cake\Http\Response|void
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function view($id = null) {
+    public function view($id = null)
+    {
         $country = $this->Countries->getCountry($id);
 
         $this->set('country', $country);
         $this->set('_serialize', 'country');
     }
-
-
 }
