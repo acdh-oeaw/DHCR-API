@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -19,7 +20,8 @@ class DisciplinesController extends AppController
      *
      * @return \Cake\Http\Response|void
      */
-    public function index() {
+    public function index()
+    {
         $this->Disciplines->evaluateQuery($this->request->getQuery());
 
         $disciplines = $this->Disciplines->getDisciplines();
@@ -28,7 +30,6 @@ class DisciplinesController extends AppController
         $this->set('_serialize', 'disciplines');
     }
 
-
     /**
      * View method
      *
@@ -36,7 +37,8 @@ class DisciplinesController extends AppController
      * @return \Cake\Http\Response|void
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function view($id = null) {
+    public function view($id = null)
+    {
         $discipline = $this->Disciplines->getDiscipline($id);
 
         $this->set('discipline', $discipline);
