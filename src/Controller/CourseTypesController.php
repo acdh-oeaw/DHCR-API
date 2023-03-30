@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -19,7 +20,8 @@ class CourseTypesController extends AppController
      *
      * @return \Cake\Http\Response|void
      */
-    public function index() {
+    public function index()
+    {
         $this->CourseTypes->evaluateQuery($this->request->getQuery());
 
         $course_types = $this->CourseTypes->getCourseTypes();
@@ -28,7 +30,6 @@ class CourseTypesController extends AppController
         $this->set('_serialize', 'course_types');
     }
 
-
     /**
      * View method
      *
@@ -36,7 +37,8 @@ class CourseTypesController extends AppController
      * @return \Cake\Http\Response|void
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function view($id = null) {
+    public function view($id = null)
+    {
         $course_type = $this->CourseTypes->getCourseType($id);
 
         $this->set('course_type', $course_type);
