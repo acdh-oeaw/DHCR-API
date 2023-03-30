@@ -27,7 +27,7 @@ class InstitutionsController extends AppController
         $institutions = $this->Institutions->getInstitutions();
 
         $this->set('institutions', $institutions);
-        $this->set('_serialize', 'institutions');
+        $this->viewBuilder()->setOption('serialize', true);
     }
 
     /**
@@ -42,6 +42,6 @@ class InstitutionsController extends AppController
         $institution = $this->Institutions->getInstitution($id);
 
         $this->set('institution', $institution);
-        $this->set('_serialize', 'institution');
+        $this->viewBuilder()->setOption('serialize', true);
     }
 }
