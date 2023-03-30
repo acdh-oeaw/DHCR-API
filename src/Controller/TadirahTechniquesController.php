@@ -27,7 +27,7 @@ class TadirahTechniquesController extends AppController
         $tadirah_techniques = $this->TadirahTechniques->getTadirahTechniques();
 
         $this->set('tadirah_techniques', $tadirah_techniques);
-        $this->set('_serialize', 'tadirah_techniques');
+        $this->viewBuilder()->setOption('serialize', true);
     }
 
     /**
@@ -42,6 +42,6 @@ class TadirahTechniquesController extends AppController
         $tadirah_technique = $this->TadirahTechniques->getTadirahTechnique($id);
 
         $this->set('tadirah_technique', $tadirah_technique);
-        $this->set('_serialize', 'tadirah_technique');
+        $this->viewBuilder()->setOption('serialize', true);
     }
 }
