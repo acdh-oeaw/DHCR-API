@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -19,7 +20,8 @@ class TadirahObjectsController extends AppController
      *
      * @return \Cake\Http\Response|void
      */
-    public function index() {
+    public function index()
+    {
         $this->TadirahObjects->evaluateQuery($this->request->getQuery());
 
         $tadirah_objects = $this->TadirahObjects->getTadirahObjects();
@@ -28,7 +30,6 @@ class TadirahObjectsController extends AppController
         $this->set('_serialize', 'tadirah_objects');
     }
 
-
     /**
      * View method
      *
@@ -36,7 +37,8 @@ class TadirahObjectsController extends AppController
      * @return \Cake\Http\Response|void
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function view($id = null) {
+    public function view($id = null)
+    {
         $tadirah_object = $this->TadirahObjects->getTadirahObject($id);
 
         $this->set('tadirah_object', $tadirah_object);
