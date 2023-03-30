@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -22,22 +23,23 @@ class CoursesController extends AppController
      *
      * @return \Cake\Http\Response|void
      */
-    public function index() {
+    public function index()
+    {
         $this->Courses->evaluateQuery($this->request->getQuery());
-		$courses = $this->Courses->getResults();
+        $courses = $this->Courses->getResults();
 
-		$this->set('courses', $courses);
+        $this->set('courses', $courses);
         $this->set('_serialize', 'courses');
     }
 
+    public function count()
+    {
+        $this->Courses->evaluateQuery($this->request->getQuery());
+        $result = ['course_count' => $this->Courses->countResults()];
 
-    public function count() {
-		$this->Courses->evaluateQuery($this->request->getQuery());
-		$result = ['course_count' => $this->Courses->countResults()];
-
-		$this->set('count', $result);
-		$this->set('_serialize', 'count');
-	}
+        $this->set('count', $result);
+        $this->set('_serialize', 'count');
+    }
 
     /**
      * View method
@@ -46,21 +48,20 @@ class CoursesController extends AppController
      * @return \Cake\Http\Response|void
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function view($id = null) {
+    public function view($id = null)
+    {
         $course = $this->Courses->get($id, [
-			'contain' => $this->Courses->containments,
-			'conditions' => [
-				'Courses.active' => true
-			]
-		]);
+            'contain' => $this->Courses->containments,
+            'conditions' => [
+                'Courses.active' => true
+            ]
+        ]);
 
-        if(empty($course)) {
-			throw new RecordNotFoundException();
-		}
+        if (empty($course)) {
+            throw new RecordNotFoundException();
+        }
 
         $this->set('course', $course);
-		$this->set('_serialize', 'course');
+        $this->set('_serialize', 'course');
     }
-
-
 }
