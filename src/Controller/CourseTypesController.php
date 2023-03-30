@@ -27,7 +27,7 @@ class CourseTypesController extends AppController
         $course_types = $this->CourseTypes->getCourseTypes();
 
         $this->set('course_types', $course_types);
-        $this->set('_serialize', 'course_types');
+        $this->viewBuilder()->setOption('serialize', true);
     }
 
     /**
@@ -42,6 +42,6 @@ class CourseTypesController extends AppController
         $course_type = $this->CourseTypes->getCourseType($id);
 
         $this->set('course_type', $course_type);
-        $this->set('_serialize', 'course_type');
+        $this->viewBuilder()->setOption('serialize', true);
     }
 }
