@@ -73,10 +73,15 @@ $routes->scope('/', function (RouteBuilder $builder) {
     $builder->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
 
     //  Connecting existing 3.x routes to 4.x syntax
+    // $builder->connect(
+    //     '/course_duration_units/index',
+    //     ['controller' => 'CourseDurationUnits', 'action' => 'index'],
+    // );
     $builder->connect(
-        '/course_duration_units/index',
-        ['controller' => 'CourseDurationUnits', 'action' => 'index'],
-    );
+        '/course_duration_units/{action}/{id}',
+        ['controller' => 'CourseDurationUnits', 'action' => 'action'],
+    )
+        ->setPass(['id']);
 
     /**
      * Connect catchall routes for all controllers.
