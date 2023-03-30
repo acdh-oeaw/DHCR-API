@@ -77,7 +77,12 @@ $routes->scope('/', function (RouteBuilder $builder) {
         '/course_duration_units/index',
         ['controller' => 'CourseDurationUnits', 'action' => 'index'],
     );
-
+    $builder->connect(
+        '/course_duration_units/view/{id}',
+        ['controller' => 'CourseDurationUnits', 'action' => 'view'],
+    )
+        ->setPatterns(['id' => '\d+'])
+        ->setPass(['id']);
     /**
      * Connect catchall routes for all controllers.
      *
