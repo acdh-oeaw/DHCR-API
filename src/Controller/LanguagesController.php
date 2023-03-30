@@ -27,7 +27,7 @@ class LanguagesController extends AppController
         $languages = $this->Languages->getLanguages();
 
         $this->set('languages', $languages);
-        $this->set('_serialize', 'languages');
+        $this->viewBuilder()->setOption('serialize', true);
     }
 
     /**
@@ -42,6 +42,6 @@ class LanguagesController extends AppController
         $language = $this->Languages->getLanguage($id);
 
         $this->set('language', $language);
-        $this->set('_serialize', 'language');
+        $this->viewBuilder()->setOption('serialize', true);
     }
 }
