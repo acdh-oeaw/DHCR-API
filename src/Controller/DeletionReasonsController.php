@@ -28,10 +28,6 @@ class DeletionReasonsController extends AppController
 		$this->set('_serialize', 'deletion_reasons');
 	}
 
-
-
-
-
 	/**
 	 * View method
 	 *
