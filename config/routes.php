@@ -71,6 +71,78 @@ return static function (RouteBuilder $routes) {
         $builder->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
 
         /**
+         *  Connecting existing 3.x routes to 4.x syntax
+         *  These routes should stay working to match the API documentation (altough the most recent is for API v1.2 ?)
+         *  and to match the behaviour it had before the migration to 4.x
+         */
+        $builder->connect(
+            '/course_duration_units/index',
+            ['controller' => 'CourseDurationUnits', 'action' => 'index'],
+        );
+        $builder->connect(
+            '/course_duration_units/view/{id}',
+            ['controller' => 'CourseDurationUnits', 'action' => 'view'],
+        )
+            ->setPatterns(['id' => '\d+'])
+            ->setPass(['id']);
+
+        $builder->connect(
+            '/deletion_reasons/index',
+            ['controller' => 'DeletionReasons', 'action' => 'index'],
+        );
+        $builder->connect(
+            '/deletion_reasons/view/{id}',
+            ['controller' => 'DeletionReasons', 'action' => 'view'],
+        )
+            ->setPatterns(['id' => '\d+'])
+            ->setPass(['id']);
+
+        $builder->connect(
+            '/course_types/index',
+            ['controller' => 'CourseTypes', 'action' => 'index'],
+        );
+        $builder->connect(
+            '/course_types/view/{id}',
+            ['controller' => 'CourseTypes', 'action' => 'view'],
+        )
+            ->setPatterns(['id' => '\d+'])
+            ->setPass(['id']);
+
+        $builder->connect(
+            '/course_parent_types/index',
+            ['controller' => 'CourseParentTypes', 'action' => 'index'],
+        );
+        $builder->connect(
+            '/course_parent_types/view/{id}',
+            ['controller' => 'CourseParentTypes', 'action' => 'view'],
+        )
+            ->setPatterns(['id' => '\d+'])
+            ->setPass(['id']);
+
+        $builder->connect(
+            '/tadirah_objects/index',
+            ['controller' => 'TadirahObjects', 'action' => 'index'],
+        );
+        $builder->connect(
+            '/tadirah_objects/view/{id}',
+            ['controller' => 'TadirahObjects', 'action' => 'view'],
+        )
+            ->setPatterns(['id' => '\d+'])
+            ->setPass(['id']);
+
+        $builder->connect(
+            '/tadirah_techniques/index',
+            ['controller' => 'TadirahTechniques', 'action' => 'index'],
+        );
+        $builder->connect(
+            '/tadirah_techniques/view/{id}',
+            ['controller' => 'TadirahTechniques', 'action' => 'view'],
+        )
+            ->setPatterns(['id' => '\d+'])
+            ->setPass(['id']);
+
+
+        /**
          * Connect catchall routes for all controllers.
          *
          * Using the argument `DashedRoute`, the `fallbacks` method is a shortcut for
