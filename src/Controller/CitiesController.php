@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -12,35 +13,35 @@ use App\Controller\AppController;
  */
 class CitiesController extends AppController
 {
-    public $modelClass = 'DhcrCore.Cities';
+  public $modelClass = 'DhcrCore.Cities';
 
-    /**
-     * Index method
-     *
-     * @return \Cake\Http\Response|void
-     */
-    public function index() {
-		$this->Cities->evaluateQuery($this->request->getQuery());
+  /**
+   * Index method
+   *
+   * @return \Cake\Http\Response|void
+   */
+  public function index()
+  {
+    $this->Cities->evaluateQuery($this->request->getQuery());
 
-		$cities = $this->Cities->getCities();
+    $cities = $this->Cities->getCities();
 
-		$this->set('cities', $cities);
-		$this->set('_serialize', 'cities');
-    }
+    $this->set('cities', $cities);
+    $this->set('_serialize', 'cities');
+  }
 
-    /**
-     * View method
-     *
-     * @param string|null $id City id.
-     * @return \Cake\Http\Response|void
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function view($id = null) {
-        $city = $this->Cities->getCity($id);
+  /**
+   * View method
+   *
+   * @param string|null $id City id.
+   * @return \Cake\Http\Response|void
+   * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+   */
+  public function view($id = null)
+  {
+    $city = $this->Cities->getCity($id);
 
-        $this->set('city', $city);
-		$this->set('_serialize', 'city');
-    }
-
-
+    $this->set('city', $city);
+    $this->set('_serialize', 'city');
+  }
 }
