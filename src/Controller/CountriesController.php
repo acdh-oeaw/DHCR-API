@@ -27,7 +27,7 @@ class CountriesController extends AppController
         $countries = $this->Countries->getCountries();
 
         $this->set('countries', $countries);
-        $this->set('_serialize', 'countries');
+        $this->viewBuilder()->setOption('serialize', true);
     }
 
     /**
@@ -42,6 +42,6 @@ class CountriesController extends AppController
         $country = $this->Countries->getCountry($id);
 
         $this->set('country', $country);
-        $this->set('_serialize', 'country');
+        $this->viewBuilder()->setOption('serialize', true);
     }
 }
