@@ -27,7 +27,7 @@ class DisciplinesController extends AppController
         $disciplines = $this->Disciplines->getDisciplines();
 
         $this->set('disciplines', $disciplines);
-        $this->set('_serialize', 'disciplines');
+        $this->viewBuilder()->setOption('serialize', true);
     }
 
     /**
@@ -42,6 +42,6 @@ class DisciplinesController extends AppController
         $discipline = $this->Disciplines->getDiscipline($id);
 
         $this->set('discipline', $discipline);
-        $this->set('_serialize', 'discipline');
+        $this->viewBuilder()->setOption('serialize', true);
     }
 }
