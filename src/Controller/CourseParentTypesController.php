@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -14,13 +15,13 @@ class CourseParentTypesController extends AppController
 {
     public $modelClass = 'DhcrCore.CourseParentTypes';
 
-
     /**
      * Index method
      *
      * @return \Cake\Http\Response|void
      */
-    public function index() {
+    public function index()
+    {
         $this->CourseParentTypes->evaluateQuery($this->request->getQuery());
 
         $course_parent_types = $this->CourseParentTypes->getCourseParentTypes();
@@ -29,7 +30,6 @@ class CourseParentTypesController extends AppController
         $this->set('_serialize', 'course_parent_types');
     }
 
-
     /**
      * View method
      *
@@ -37,7 +37,8 @@ class CourseParentTypesController extends AppController
      * @return \Cake\Http\Response|void
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function view($id = null) {
+    public function view($id = null)
+    {
         $course_parent_type = $this->CourseParentTypes->getCourseParentType($id);
 
         $this->set('course_parent_type', $course_parent_type);
