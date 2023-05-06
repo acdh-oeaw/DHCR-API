@@ -70,7 +70,7 @@ View::disableAutoLayout();
                 <a href="https://dhcr.clarin-dariah.eu/info/#data" target="_blank">DHCR Info Page</a>
             </p>
             <h4>Support</h4>
-            <p>patrick /at/ clarin.eu</p>
+            <p>dhcr-helpdesk /at/ clarin-dariah.eu</p>
         </div>
 
         <div class="columns large-6">
