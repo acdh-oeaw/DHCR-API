@@ -82,7 +82,7 @@ $this->layout = false;
 
             <h4>Error Reports &amp; Feature Requests</h4>
             <p>
-                <a href="https://github.com/hashmich/DHCR-API/issues" target="_blank">
+                <a href="https://github.com/acdh-oeaw/dhcr-api/issues" target="_blank">
                     Issue tracker on GitHub
                 </a>
             </p>
