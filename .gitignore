@@ -40,3 +40,6 @@ nbproject/*
 ~*
 
 upgrade
+
+# Copied composer.phar by ddev
+composer.phar
