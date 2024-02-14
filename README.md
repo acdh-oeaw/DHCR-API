@@ -2,7 +2,7 @@
 REST-ful API for the Digital Humanities Course Registry
 
 ## API Documentation on SwaggerHub
-https://app.swaggerhub.com/apis/hashmich/DHCR-API/1.0
+https://app.swaggerhub.com/apis/hashmich/DHCR-API/1.2
 
 ## Setup
 The project is build using composer. 
