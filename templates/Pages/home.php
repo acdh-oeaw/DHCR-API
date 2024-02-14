@@ -33,7 +33,7 @@ View::disableAutoLayout();
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        Digital Humanities Course Registry API
+        Digital Humanities Course Registry API v2
     </title>
 
     <?= $this->Html->meta('icon') ?>
@@ -47,7 +47,7 @@ View::disableAutoLayout();
 
     <header class="row">
         <div class="header-image">
-            <h1>DHCR-API</h1>
+            <h1>DHCR-API v2</h1>
         </div>
         <div class="header-title">
             <h1>The Digital Humanities Course Registry API</h1>
