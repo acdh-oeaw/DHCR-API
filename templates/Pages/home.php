@@ -76,6 +76,9 @@ View::disableAutoLayout();
         <div class="columns large-6">
             <h4>Documentation</h4>
             <p>
+                <font color="red"> Please note: The documentation below is from the older v1 version.<br>
+                    Use the prefix https://dhcr.clarin-dariah.eu/api/v2/ to access all endpoints.
+                </font><br>
                 <a href="https://app.swaggerhub.com/apis-docs/hashmich/DHCR-API" target="_blank">
                     API docs on Swagger
                 </a>
