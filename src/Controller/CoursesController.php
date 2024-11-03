@@ -25,7 +25,10 @@ class CoursesController extends AppController
     public function index() {
         $this->Courses->evaluateQuery($this->request->getQuery());
 		$courses = $this->Courses->getResults();
-
+        // Remove email addresses from API output, issue #109
+        foreach ($courses as $course) {
+            unset($course['contact_mail']);
+        }
 		$this->set('courses', $courses);
     }
 
@@ -52,6 +55,8 @@ class CoursesController extends AppController
         if(empty($course)) {
 			throw new RecordNotFoundException();
 		}
+        // Remove email addresses from API output, issue #109
+        unset($course['contact_mail']);
         $this->set('course', $course);
     }
 
